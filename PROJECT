@@ -1,6 +1,6 @@
 domain: civotest.com
 layout: go.kubebuilder.io/v2
-repo: github.com/birdiesanders/memcached-opertor
+repo: github.com/birdiesanders/memcached-operator
 resources:
 - group: cache
   kind: Memcached

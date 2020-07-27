@@ -27,8 +27,8 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	cachev1alpha1 "github.com/birdiesanders/memcached-opertor/api/v1alpha1"
-	"github.com/birdiesanders/memcached-opertor/controllers"
+	cachev1alpha1 "github.com/birdiesanders/memcached-operator/api/v1alpha1"
+	"github.com/birdiesanders/memcached-operator/controllers"
 	// +kubebuilder:scaffold:imports
 )
 
@@ -60,7 +60,7 @@ func main() {
 		MetricsBindAddress: metricsAddr,
 		Port:               9443,
 		LeaderElection:     enableLeaderElection,
-		LeaderElectionID:   "e26ad43b.civotest.com",
+		LeaderElectionID:   "2aa51752.civotest.com",
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")
