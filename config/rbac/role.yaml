@@ -7,7 +7,19 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - cache.civotest.com
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.example.com
   resources:
   - memcacheds
   verbs:
@@ -19,10 +31,17 @@ rules:
   - update
   - watch
 - apiGroups:
-  - cache.civotest.com
+  - cache.example.com
   resources:
   - memcacheds/status
   verbs:
   - get
   - patch
   - update
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
