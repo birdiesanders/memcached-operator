@@ -6,7 +6,7 @@ apiVersion: cert-manager.io/v1alpha2
 kind: Issuer
 metadata:
   name: selfsigned-issuer
-  namespace: system
+  namespace: cert-manager
 spec:
   selfSigned: {}
 ---
@@ -14,12 +14,12 @@ apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: serving-cert  # this name should match the one appeared in kustomizeconfig.yaml
-  namespace: system
+  namespace: cert-manager
 spec:
   # $(SERVICE_NAME) and $(SERVICE_NAMESPACE) will be substituted by kustomize
   dnsNames:
-  - $(SERVICE_NAME).$(SERVICE_NAMESPACE).svc
-  - $(SERVICE_NAME).$(SERVICE_NAMESPACE).svc.cluster.local
+  - go-operator-webhook-service.default.svc
+  - go-operator-webhook-service.default.svc.cluster.local
   issuerRef:
     kind: Issuer
     name: selfsigned-issuer

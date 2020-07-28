@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: quay.io/birdie/memcached-operator
-  newTag: v0.0.2
+  newTag: v0.0.3
